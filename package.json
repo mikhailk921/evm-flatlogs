@@ -61,10 +61,10 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.19.43",
+    "@types/node": "^22.20.5",
     "dotenv": "^18.0.9",
     "typescript": "^5.9.3",
-    "vitest": "^1.6.1"
+    "vitest": "^5.1.0"
   },
   "dependencies": {
     "@noble/hashes": "^1.8.0"
