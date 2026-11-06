@@ -1,7 +1,7 @@
 {
   "name": "evm-flatlogs",
-  "version": "0.1.1",
-  "description": "Bounded, flat-fee EVM log/event delivery. Predictable eth_getLogs — no CU explosion.",
+  "version": "0.1.2",
+  "description": "EVM Ethereum event log scraper and decoder. Bounded, flat-fee eth_getLogs scanning with ABI event decoding, webhook delivery, continuous streaming, and no CU explosion.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -42,10 +42,22 @@
     "evm",
     "eth_getlogs",
     "logs",
+    "event-logs",
+    "event-log",
     "events",
     "web3",
     "rpc",
-    "indexer"
+    "indexer",
+    "blockchain",
+    "scanner",
+    "stream",
+    "streaming",
+    "webhook",
+    "abi",
+    "abi-decoder",
+    "decoder",
+    "transfer",
+    "erc20"
   ],
   "license": "MIT",
   "devDependencies": {

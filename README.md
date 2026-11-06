@@ -1,14 +1,24 @@
 # evm-flatlogs
 
-**Predictable `eth_getLogs`. No CU explosion.**
+**Ethereum / EVM event log scraper and decoder. Predictable `eth_getLogs`. No CU explosion.**
 
 > Source: [github.com/mikhailk921/evm-flatlogs](https://github.com/mikhailk921/evm-flatlogs)
 > Bugs & feature requests: [open an issue](https://github.com/mikhailk921/evm-flatlogs/issues)
 
-A bounded, typed EVM event-delivery engine. It splits a block range adaptively
-so a request never blows a provider's credit cap, ABI-decodes events for you,
-and pushes them to your webhook/stream — at a flat, predictable price per event
-instead of per-credit.
+A bounded, typed EVM **event log** engine for reading, decoding and streaming
+on-chain events (Transfer, Approval, and arbitrary ABI event logs). It splits a
+block range adaptively so a request never blows a provider's credit cap,
+**ABI-decodes** events for you, and pushes them to your webhook/stream — at a
+flat, predictable price per event instead of per-credit.
+
+### What you get
+
+- Bounded `eth_getLogs` scanning across wide block ranges — no truncated or
+  errored responses silently accepted, never a CU blow-up.
+- ABI event **decoder** for ERC-20 (Transfer/Approval) and custom event signatures.
+- **Continuous streaming** with restart backfill from a persisted cursor.
+- **Webhook** delivery of typed, decoded events.
+- Two CLIs (`evm-flatlogs`, `evm-flatlogs-calc`) plus a TypeScript library API.
 
 > This is the free/OSS core of a planned managed tier. The engine works on your
 > own RPC, your own webhook, and your own blocks. No accounts, no gatekeeping,
